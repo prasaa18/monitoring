@@ -16,7 +16,7 @@ prometheus.scrape "metrics_5000" {
 
 prometheus.scrape "metrics_default" {
   targets = [{
-    __address__ = "localhost:8080",  // Adjust port if different; assuming 8080 for /metrics endpoint
+    __address__ = "localhost:9100",  // Adjust port if different; assuming 9100 for /metrics endpoint from nodeexporter
     __metrics_path__ = "/metrics",
   }]
   forward_to = [prometheus.remote_write.default.receiver]
